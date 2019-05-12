@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <script>
+        
+        var data = [{"applianceType":"air_conditioner","visualTreeNumber":247},{"applianceType":"clothes_dryer","visualTreeNumber":16},{"applianceType":"clothes_washer","visualTreeNumber":27},{"applianceType":"dehumidifiers","visualTreeNumber":142},{"applianceType":"desk_top","visualTreeNumber":6},{"applianceType":"fan","visualTreeNumber":3},{"applianceType":"hair_dryer","visualTreeNumber":50},{"applianceType":"heater","visualTreeNumber":94},{"applianceType":"lamp","visualTreeNumber":1},{"applianceType":"laptop","visualTreeNumber":1},{"applianceType":"refrigerator","visualTreeNumber":24},{"applianceType":"stereo","visualTreeNumber":2},{"applianceType":"television","visualTreeNumber":22},{"applianceType":"water_heater","visualTreeNumber":154}];
+
+        //console.log(data.constructor === Array); 
+        //console.log(data); 
+        var ac = 0;
+        var clothdryer = 0; 
+        var clothwash = 0; 
+        var dehum = 0; 
+        var desktop = 0; 
+        var fan = 0; 
+        var hairdry = 0; 
+        var heater = 0; 
+        var lamp = 0; 
+        var laptop = 0; 
+        var fridge = 0;
+        var stereo = 0; 
+        var tv = 0; 
+        var waterheat = 0; 
+       
+      
+        for(var i = 0; i < data.length; i++) {
+            if (data[i].applianceType == 'air_conditioner') {
+                var ac = data[i].visualTreeNumber;
+            }
+
+            else if (data[i].applianceType == 'clothes_dryer') {
+                var clothdryer = data[i].visualTreeNumber;
+
+            }
+
+            else if (data[i].applianceType == 'clothes_washer') {
+                var clothwash = data[i].visualTreeNumber;
+
+            }
+            
+            else if (data[i].applianceType == 'dehumidifiers') {
+                var dehum = data[i].visualTreeNumber;
+
+            }
+
+            else if (data[i].applianceType == 'desk_top') {
+                var desktop = data[i].visualTreeNumber;
+
+            }
+
+            else if (data[i].applianceType == 'fan') {
+                var fan = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'hair_dryer') {
+                var hairdry = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'heater') {
+                var heater = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'lamp') {
+                var lamp = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'laptop') {
+                var laptop = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'refrigerator') {
+                var fridge = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'stereo') {
+                var stereo = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'television') {
+                var tv = data[i].visualTreeNumber;
+
+            }
+            else if (data[i].applianceType == 'water_heater'){
+                var waterheat = data[i].visualTreeNumber;
+
+            }
+
+            else {
+                continue;
+            }
+
+
+        }
+
+        //console.log(typeof data[i].applianceType);
+            //console.log(typeof data[i].visualTreeNumber);
+            //console.log(data[i].applianceType+","+ data[i].visualTreeNumber); 
+            console.log(ac); 
+            console.log(clothdryer); 
+            console.log(clothwash); 
+            console.log(dehum); 
+            console.log(desktop); 
+            console.log(fan); 
+            console.log(hairdry); 
+            console.log(heater); 
+            console.log(lamp); 
+            console.log(laptop); 
+            console.log(fridge); 
+            console.log(stereo); 
+            console.log(tv); 
+            console.log(waterheat); 
+
+        
+
+        //function countitems() {
+                //var countitems = a + b + c + d + e + f;
+                //console.log("visual:" + visual);
+                //document.getElementById("visual").innerHTML = "(" + countitems + "/" + "6)";
+            //}
+
+
+
+        
+    </script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

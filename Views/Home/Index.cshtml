@@ -1,0 +1,283 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
+    <title>Story</title>
+    <style>
+        body,
+        div,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .Homepage {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        #bg-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .items {
+            float: left;
+            position: relative;
+        }
+
+        .startbutton {
+            width: 232px;
+            height: 86px;
+            top: -200px;
+            left: 435px;
+        }
+
+        .logo {
+            width: 566px;
+            height: 200px;
+            top: -750px;
+        }
+
+        /*.title {
+            font-family: 'Quicksand', sans-serif;
+            font-style: italic;
+            transform: translate(-50%,-50%);
+            margin: 0;
+            padding: 0 20px;
+            font-size: 6em;
+            color: #fff;
+            text-shadow: 0 0 20px dodgerblue;
+            top: -700px;
+            left: 300px;
+            font-weight: bold;
+        }
+
+            .title:after {
+                content: attr(data-text);
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0 20px;
+                z-index: -1;
+                color: dodgerblue;
+                filter: blur(15px);
+            }
+
+            .title:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: deepskyblue;
+                z-index: -2;
+                opacity: 1;
+                filter: blur(40px)
+            }*/
+
+
+        .navigation-wrapper {
+            position: relative;
+        }
+
+        .navigation-button {
+            will-change: transform;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: fixed;
+            z-index: 1;
+            top: 15px;
+            right: 150px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+            .navigation-button .fa {
+                width: 50px;
+                height: 50px;
+            }
+
+        .navigationbutton-img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        .navigation-menu ul li {
+            list-style: none;
+            font-family: impact;
+            font-weight: 300;
+            color: hsl(0, 0%, 70%);
+        }
+
+        .navigation-menu {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            background: #fff;
+            height: 100%;
+            transform: skewX(0deg) translate(100%, 0);
+            transform-origin: top right;
+            transition: all .2s ease-in;
+            z-index: 1000;
+        }
+
+            .navigation-menu ul {
+                transform: skewX(-8deg);
+                transform-origin: top left;
+                position: fixed;
+                right: 120px;
+                top: 120px;
+                width: 400px;
+                text-align: right;
+            }
+
+                .navigation-menu ul li {
+                    position: relative;
+                    z-index: 999;
+                    font-size: 32px;
+                    color: hsl(0, 0%, 10%);
+                    line-height: 64px;
+                }
+
+                    .navigation-menu ul li a {
+                        border: none;
+                        color: hsl(0, 0%, 10%);
+                        text-decoration: none;
+                    }
+
+            .navigation-menu.active {
+                transform: skewX(8deg) translate(0, 0);
+            }
+
+            .navigation-menu li {
+                opacity: 0;
+                transform: translate(0, 10px);
+                transition: all .0s ease-in .3s;
+            }
+
+            .navigation-menu.active li {
+                opacity: 1;
+                transform: translate(0, 0);
+                transition: all .2s ease-in 0s;
+            }
+
+                .navigation-menu.active li:nth-child(1) {
+                    transition-delay: .3s;
+                }
+
+                .navigation-menu.active li:nth-child(2) {
+                    transition-delay: .4s;
+                }
+
+                .navigation-menu.active li:nth-child(3) {
+                    transition-delay: .5s;
+                }
+
+                .navigation-menu.active li:nth-child(4) {
+                    transition-delay: .6s;
+                }
+
+                .navigation-menu.active li:nth-child(5) {
+                    transition-delay: .7s;
+                }
+
+                .navigation-menu.active li:nth-child(6) {
+                    transition-delay: .8s;
+                }
+    </style>
+</head>
+
+<body>
+    <div class="Homepage">
+
+        <img src="https://i.imgur.com/xhV9uoD.png" alt="Can not find the image source." id="bg-img">
+
+        <div class="items startbutton">
+            <a href="~/Home/Story">
+                <img src="https://i.imgur.com/7zvh9Gi.png" alt="Can not find the image source." id="startbutton-img">
+            </a>
+        </div>
+
+        @*<h1 class="items title" data-text="[Neon_Light]">
+                ECOFRIENDS
+            </h1>*@
+
+        <div class="items logo">
+            <img src="https://i.imgur.com/6yVnNv2.png" alt="Can not find the image source." />
+        </div>
+
+        @*<div class="items navigation-wrapper">
+                <div class="items navigation-button">
+                    <i class="fa fa-bars">
+                        <img class="navigationbutton-img" src="https://i.imgur.com/G1qIGAw.png"
+                            alt="Can not find the image source." />
+                    </i>
+
+                </div>
+                <div class="navigation-menu">
+                    <ul>
+                        <li><a href="~/Home/Index">HOME</a></li>
+                        <li><a href="~/Home/Story">STORY</a></li>
+                        <li><a href="~/Home/ChooseRooms">CHOOSE ROOMS</a></li>
+                        <li><a href="~/Home/Rules">GUIDLINE</a></li>
+                    </ul>
+                </div>
+            </div>*@
+    </div>
+    <script>
+
+        // set the password of the website
+        var password;
+        var pass = "physis";
+        password = prompt('Please enter the password to view the page', '');
+        if (password == pass)
+            alert('Correct password, click ok to enter.');
+        else {
+            window.location = "http://www.google.com.au";
+        }
+
+        var navButton = document.querySelector('.navigation-button');
+        var navMenu = document.querySelector('.navigation-menu');
+        var win = window;
+
+        function openMenu(event) {
+
+            navButton.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        function closeMenu(event) {
+            if (navButton.classList.contains('active')) {
+                navButton.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+        navButton.addEventListener('click', openMenu, false);
+        win.addEventListener('click', closeMenu, false);
+    </script>
+</body>
+
+</html>

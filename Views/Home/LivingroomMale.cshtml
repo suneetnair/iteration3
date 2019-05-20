@@ -1,0 +1,699 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="60; url=LivingroomVisual" />
+    <title>Livingroom</title>
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/XabtmCk.png">
+    <script src="~/Scripts/Timer.js"></script>
+    <style>
+                .closebutton {
+                    float: left;
+                    position: relative;
+                    top: -2910px;
+                    left: 510px;
+                    width: 53px;
+                    height: 53px;
+                }
+
+                body,
+                div,
+                p {
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .livingroom-senario {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 1080px;
+                    margin: 0 auto;
+                }
+
+                /* div{
+            border: 1px solid lawngreen;
+        } */
+
+                .background-img {
+                    width: 1080px;
+                    height: 800px;
+                }
+
+                .items {
+                    float: left;
+                    position: relative;
+                }
+
+                .lights-on {
+                    width: 769px;
+                    height: 719px;
+                    top: -753px;
+                    left: 310px;
+                }
+
+                .tv-on {
+                    width: 298px;
+                    height: 191px;
+                    top: -1562px;
+                    left: 142px;
+                }
+
+                .stand-light-on {
+                    width: 504px;
+                    height: 225px;
+                    top: -1265px;
+                    left: 240px;
+                }
+
+                .stand-light-off {
+                    width: 93px;
+                    height: 285px;
+                    top: -600px;
+                    left: -327px;
+                }
+
+                .stereo-off {
+                    width: 457px;
+                    height: 92px;
+                    top: -1260px;
+                    left: 64px;
+                }
+
+                .stereo-on {
+                    width: 488px;
+                    height: 62px;
+                    top: -1420px;
+                    left: 60px;
+                }
+
+                .airconditionor {
+                    width: 210px;
+                    height: 405px;
+                    top: -1300px;
+                    left: 20px;
+                }
+
+                .airconditionor-on {
+                    width: 216px;
+                    height: 256px;
+                    top: -1690px;
+                    left: 660px;
+                }
+
+                .sofa {
+                    width: 284px;
+                    height: 238px;
+                    top: -1690px;
+                    left: 140px;
+                }
+
+                .wallheater-off {
+                    width: 250px;
+                    height: 119px;
+                    top: -1755px;
+                    left: -475px;
+                }
+
+                .wallheater-on {
+                    width: 247px;
+                    height: 82px;
+                    top: -2200px;
+                    left: 25px;
+                }
+
+                .window {
+                    width: 376px;
+                    height: 256px;
+                    top: -2200px;
+                    left: -500px;
+                }
+
+                .sun {
+                    width: 86px;
+                    height: 93px;
+                    top: -2440px;
+                    left: 30px;
+                }
+
+                .cloud1 {
+                    width: 118px;
+                    height: 59px;
+                    top: -2420px;
+                    left: -330px;
+                }
+
+                .cloud2 {
+                    width: 117px;
+                    height: 72px;
+                    top: -2420px;
+                    left: -280px;
+                }
+
+                .mountain {
+                    width: 361px;
+                    height: 149px;
+                    top: -2349px;
+                    left: -567px;
+                }
+
+                .tree1 {
+                    width: 192px;
+                    height: 126px;
+                    top: -2480px;
+                    left: 165px;
+                }
+
+                .tree2 {
+                    width: 164px;
+                    height: 112px;
+                    top: -2465px;
+                    left: -180px;
+                }
+
+                .toplight {
+                    width: 321px;
+                    height: 64px;
+                    top: -2603px;
+                    left: 300px;
+                }
+
+                .chair {
+                    width: 289px;
+                    height: 321px;
+                    top: -2140px;
+                    left: -640px;
+                }
+
+                .dvd {
+                    width: 164px;
+                    height: 36px;
+                    top: -2623px;
+                    left: 720px;
+                }
+
+                .timerbackground {
+                    /* border: 1px solid green; */
+                    float: left;
+                    position: relative;
+                    width: 170px;
+                    height: 90px;
+                    top: -2240px;
+                    left: 260px;
+                }
+
+                #timerbackgroundimg {
+                    width: 170px;
+                    height: 90px;
+                }
+
+                #showtime {
+                    float: left;
+                    position: relative;
+                    /* border: 1px solid greenyellow; */
+                    top: -2222px;
+                    left: 120px;
+                    width: 110px;
+                    height: 50px;
+                    font-size: 40px;
+                    color: red;
+                    font-family: "Comic Sans MS";
+                }
+
+                .counterbackground {
+                    width: 170px;
+                    height: 100px;
+                    top: -2250px;
+                    left: 120px;
+                }
+
+                #counterbackground-img {
+                    width: 170px;
+                    height: 100px;
+                }
+
+                #countitem {
+                    float: left;
+                    position: relative;
+                    width: 120px;
+                    height: 50px;
+                    font-size: 50px;
+                    color: red;
+                    font-family: 'Schoolbell', cursive;
+                    top: -2230px;
+                    left: -25px;
+                }
+
+                .navigation-wrapper {
+                    position: relative;
+                }
+
+                .navigation-button {
+                    will-change: transform;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    position: fixed;
+                    z-index: 1;
+                    top: 15px;
+                    right: 150px;
+                    background: transparent;
+                    cursor: pointer;
+                }
+
+                    .navigation-button .fa {
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                .navigationbutton-img {
+                    width: 50px;
+                    height: 50px;
+                }
+
+
+                .navigation-menu ul li {
+                    list-style: none;
+                    font-family: impact;
+                    font-weight: 300;
+                    color: hsl(0, 0%, 70%);
+                }
+
+                .navigation-menu {
+                    content: '';
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    width: 50%;
+                    background: #fff;
+                    height: 100%;
+                    transform: skewX(0deg) translate(100%, 0);
+                    transform-origin: top right;
+                    transition: all .2s ease-in;
+                    z-index: 1000;
+                }
+
+                    .navigation-menu ul {
+                        transform: skewX(-8deg);
+                        transform-origin: top left;
+                        position: fixed;
+                        right: 120px;
+                        top: 120px;
+                        width: 400px;
+                        text-align: right;
+                    }
+
+                        .navigation-menu ul li {
+                            position: relative;
+                            z-index: 999;
+                            font-size: 32px;
+                            color: hsl(0, 0%, 10%);
+                            line-height: 64px;
+                        }
+
+                            .navigation-menu ul li a {
+                                border: none;
+                                color: hsl(0, 0%, 10%);
+                                text-decoration: none;
+                            }
+
+                    .navigation-menu.active {
+                        transform: skewX(8deg) translate(0, 0);
+                    }
+
+                    .navigation-menu li {
+                        opacity: 0;
+                        transform: translate(0, 10px);
+                        transition: all .0s ease-in .3s;
+                    }
+
+                    .navigation-menu.active li {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                        transition: all .2s ease-in 0s;
+                    }
+
+                        .navigation-menu.active li:nth-child(1) {
+                            transition-delay: .3s;
+                        }
+
+                        .navigation-menu.active li:nth-child(2) {
+                            transition-delay: .4s;
+                        }
+
+                        .navigation-menu.active li:nth-child(3) {
+                            transition-delay: .5s;
+                        }
+
+                        .navigation-menu.active li:nth-child(4) {
+                            transition-delay: .6s;
+                        }
+
+                        .navigation-menu.active li:nth-child(5) {
+                            transition-delay: .7s;
+                        }
+
+                        .navigation-menu.active li:nth-child(6) {
+                            transition-delay: .8s;
+                        }
+    </style>
+</head>
+
+<body onload="setTimeout(changetoresult, 59000)">
+    <div class="livingroom-senario">
+        <img src="https://i.imgur.com/kxNDe1u.png" alt="Can not find the image source." class="background-img">
+
+        <div class="items lights-on">
+            <img src="https://i.imgur.com/bYn1FQ1.png" alt="Can not find the image source." id="lights-on-img">
+        </div>
+
+        <div class="items stand-light-off">
+            <img onclick="changestandlight();countitems();changepage()" src="https://i.imgur.com/0GGDy4J.png"
+                 alt="Can not find the image source." id="stand-light-off-img">
+        </div>
+
+        <div class="items stand-light-on">
+            <img src="https://i.imgur.com/Ny3SWsE.png" alt="Can not find the image source." id="stand-light-on-img">
+        </div>
+
+        <div class="items stereo-off">
+            <img onclick="changestereo();countitems();changepage()" src="https://i.imgur.com/coiSLeR.png"
+                 alt="Can not find the image source." id="stereo-off-img">
+        </div>
+
+        <div class="items stereo-on">
+            <img src="https://i.imgur.com/YVGffLF.png" alt="Can not find the image source." id="stereo-on-img">
+        </div>
+
+        <div class="items tv-on">
+            <img onClick="changetv();countitems();changepage()" src="https://i.imgur.com/rVsYxvX.png"
+                 alt="Can not find the image source." id="tv-on-img">
+        </div>
+
+        <div class="items airconditionor">
+            <img onClick="changeac();countitems();changepage()" src="https://i.imgur.com/KtBlIsk.png"
+                 alt="Can not find the image source." id="airconditionor-img">
+        </div>
+
+        <div class="items airconditionor-on">
+            <img src="https://i.imgur.com/7vQsTqg.png" alt="Can not find the image source." id="airconditionor-on-img">
+        </div>
+
+        <div class="items sofa">
+            <img src="https://i.imgur.com/Nix7Fg3.png" alt="Can not find the image source." id="sofa-img">
+        </div>
+
+        <div class="items wallheater-off">
+            <img onclick="changewallheater();countitems();changepage()" src="https://i.imgur.com/YrXnsyb.png"
+                 alt="Can not find the image source." id="wallheater-off-img">
+        </div>
+
+
+        <div class="items window">
+            <img src="https://i.imgur.com/nIuSg1o.png" alt="Can not find the image source." id="window-img">
+        </div>
+
+        <div class="items wallheater-on">
+            <img src="https://i.imgur.com/hOnnCBV.png" alt="Can not find the image source." id="wallheater-on-img">
+        </div>
+
+        <div class="items sun">
+            <img src="https://i.imgur.com/hvbVRSZ.png" alt="Can not find the image source." id="sun-img">
+        </div>
+
+        <div class="items cloud1">
+            <img src="https://i.imgur.com/4KckFZJ.png" alt="Can not find the image source." id="cloud1-img">
+        </div>
+
+        <div class="items cloud2">
+            <img src="https://i.imgur.com/yt83aHh.png" alt="Can not find the image source." id="cloud2-img">
+        </div>
+
+        <div class="items mountain">
+            <img src="https://i.imgur.com/UHKj1Cp.png" alt="Can not find the image source." id="mountain-img">
+        </div>
+
+        <div class="items tree1">
+            <img src="https://i.imgur.com/8FZv0c3.png" alt="Can not find the image source." id="tree1-img">
+        </div>
+
+        <div class="items tree2">
+            <img src="https://i.imgur.com/EDsIDmC.png" alt="Can not find the image source." id="tree2-img">
+        </div>
+
+        <div class="items toplight">
+            <img onClick="changetoplight();countitems();changepage()" src="https://i.imgur.com/ktBIa9w.png"
+                 alt="Can not find the image source." id="toplight-img">
+        </div>
+
+        <div class="items chair">
+            <img src="https://i.imgur.com/XVcl5LM.png" alt="Can not find the image source." id="chair-img">
+        </div>
+
+        <div class="items dvd">
+            <img src="https://i.imgur.com/7agzICA.png" alt="Can not find the image source." id="dvd-img">
+        </div>
+
+        <!-- The timer background img -->
+        <div class="items timerbackground">
+            <img src="https://i.imgur.com/IUOlsqi.png" alt="Can not find the image source." id="timerbackgroundimg">
+        </div>
+
+        <!-- The timer -->
+        <div id="showtime">
+
+        </div>
+
+        <!-- The close button img -->
+        <div class="items closebutton">
+            <a href="~/Home/ChooseRooms">
+                <img src="https://i.imgur.com/vgKLrXv.png" alt="Can not find the image source." class="closebutton-img">
+            </a>
+        </div>
+
+        <div class="items counterbackground">
+            <img src="https://i.imgur.com/Xl3bO1C.png" alt="Can not find the image source."
+                 id="counterbackground-img" />
+        </div>
+
+        <!-- The count of how many items have been found -->
+        <div id="countitem">
+
+        </div>
+
+        <div class="items navigation-wrapper">
+            <div class="items navigation-button">
+                <i class="fa fa-bars">
+                    <img class="navigationbutton-img" src="https://i.imgur.com/G1qIGAw.png"
+                         alt="Can not find the image source." />
+                </i>
+
+            </div>
+            <div class="navigation-menu">
+                <ul>
+                    <li><a href="~/Home/Index">HOME</a></li>
+                    <li><a href="~/Home/Story">STORY</a></li>
+                    <li><a href="~/Home/ChooseRooms">CHOOSE ROOMS</a></li>
+                    <li><a href="~/Home/Rules">GUIDLINE</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var navButton = document.querySelector('.navigation-button');
+        var navMenu = document.querySelector('.navigation-menu');
+        var win = window;
+
+        function openMenu(event) {
+
+            navButton.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        function closeMenu(event) {
+            if (navButton.classList.contains('active')) {
+                navButton.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+        navButton.addEventListener('click', openMenu, false);
+
+        win.addEventListener('click', closeMenu, false);
+
+        var sun = document.getElementById("sun-img");
+        sun.style.display = "none";
+
+        var cloud1 = document.getElementById("cloud1-img");
+        cloud1.style.display = "none";
+
+        var cloud2 = document.getElementById("cloud2-img");
+        cloud2.style.display = "none";
+
+        var mountain = document.getElementById("mountain-img");
+        mountain.style.display = "none";
+
+        var tree1 = document.getElementById("tree1-img");
+        tree1.style.display = "none";
+
+        var tree2 = document.getElementById("tree2-img");
+        tree2.style.display = "none";
+
+        var airconditionor = document.getElementById("airconditionor-on-img");
+
+        var toplight = document.getElementById("lights-on-img");
+
+        var standlight = document.getElementById("stand-light-on-img");
+
+        var stereo = document.getElementById("stereo-on-img");
+
+        var wallheater = document.getElementById("wallheater-on-img");
+
+        // set the time
+        resetTime("showtime", 60);
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
+        var e = 0;
+        var f = 0;
+
+        function countitems() {
+            var countitems = a + b + c + d + e + f;
+            console.log("count:" + countitems);
+            document.getElementById("countitem").innerHTML = "(" + countitems + "/" + "6)";
+        }
+
+        function changeac() {
+            var element = document.getElementById("airconditionor-img");
+            if (element.src.match("https://i.imgur.com/KtBlIsk.png")) {
+                element.src = "https://i.imgur.com/MxRMXCc.png";
+                sun.style.display = "block";
+                airconditionor.style.display = "none";
+                a = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/KtBlIsk.png";
+                sun.style.display = "none";
+                airconditionor.style.display = "block";
+                a = 0;
+            }
+        }
+
+        function changetoplight() {
+            var element = document.getElementById("toplight-img");
+            if (element.src.match("https://i.imgur.com/ktBIa9w.png")) {
+                element.src = "https://i.imgur.com/9PomJji.png";
+                cloud1.style.display = "block";
+                toplight.style.display = "none";
+                b = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/ktBIa9w.png";
+                cloud1.style.display = "none";
+                toplight.style.display = "block";
+                b = 0;
+            }
+        }
+
+        function changetv() {
+            var element = document.getElementById("tv-on-img");
+            if (element.src.match("https://i.imgur.com/rVsYxvX.png")) {
+                element.src = "https://i.imgur.com/1hJeuqa.png"
+                cloud2.style.display = "block";
+                c = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/rVsYxvX.png";
+                cloud2.style.display = "none";
+                c = 0;
+            }
+        }
+
+        function changestandlight() {
+            var element = document.getElementById("stand-light-off-img");
+            if (element.src.match("https://i.imgur.com/0GGDy4J.png")) {
+                element.src = "https://i.imgur.com/ZNzh766.png";
+                mountain.style.display = "block";
+                standlight.style.display = "none";
+                d = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/0GGDy4J.png";
+                mountain.style.display = "none";
+                standlight.style.display = "block";
+                d = 0;
+            }
+        }
+
+        function changestereo() {
+            var element = document.getElementById("stereo-off-img");
+            if (element.src.match("https://i.imgur.com/coiSLeR.png")) {
+                element.src = "https://i.imgur.com/J4PXGRz.png";
+                tree1.style.display = "block";
+                stereo.style.display = "none";
+                e = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/coiSLeR.png";
+                tree1.style.display = "none";
+                stereo.style.display = "block";
+                e = 0;
+            }
+        }
+
+        function changewallheater() {
+            var element = document.getElementById("wallheater-off-img");
+            if (element.src.match("https://i.imgur.com/YrXnsyb.png")) {
+                element.src = "https://i.imgur.com/fOysINP.png";
+                tree2.style.display = "block";
+                wallheater.style.display = "none";
+                f = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/YrXnsyb.png";
+                tree2.style.display = "none";
+                wallheater.style.display = "block";
+                f = 0;
+            }
+        }
+
+        function changepage() {
+            if (a && b && c && d && e && f == 1) {
+                window.location.href = 'ResultGoldLivingroomMale';
+            }
+        }
+
+        function changetoresult() {
+            var clickeditems = a + b + c + d + e + f;
+            if (clickeditems <= 2) {
+                window.location.href = 'ResultBronzeLivingroomMale';
+            }
+            else if (clickeditems > 2 && clickeditems <= 5) {
+                window.location.href = 'ResultSilverLivingroomMale';
+            }
+            else if (clickeditems == 6) {
+                window.location.href = 'ResultGoldLivingroomMale';
+            }
+        }
+        setTimeout(changetoresult, 59000);
+    </script>
+
+</body>
+
+</html>

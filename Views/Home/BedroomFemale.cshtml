@@ -1,0 +1,697 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="60; url=BedroomVisual" />
+    <title>Bedroom</title>
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/XabtmCk.png">
+    <script src="~/Scripts/Timer.js"></script>
+    <style>
+        body,
+        div,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* div {
+            border: 1px solid lawngreen;
+        } */
+
+        .bedroom-senorio {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        .background-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .items {
+            float: left;
+            position: relative;
+        }
+
+        .bed {
+            width: 565px;
+            height: 459px;
+            top: -464px;
+            left: 515px;
+        }
+
+        .desk {
+            width: 383px;
+            height: 232px;
+            top: -760px;
+            left: -470px;
+        }
+
+        .window {
+            width: 364px;
+            height: 331px;
+            top: -730px;
+            left: -565px;
+        }
+
+        .light {
+            width: 106px;
+            height: 115px;
+            top: -1073px;
+            left: -440px;
+        }
+
+        .tablelight {
+            width: 158px;
+            height: 247px;
+            top: -1030px;
+            left: 570px;
+        }
+
+        .laptop {
+            width: 126px;
+            height: 120px;
+            top: -730px;
+            left: 450px;
+        }
+
+        .phone {
+            width: 204px;
+            height: 105px;
+            top: -800px;
+            left: 440px;
+        }
+
+        .ac {
+            width: 398px;
+            height: 250px;
+            top: -1300px;
+            left: 150px;
+        }
+
+        .heater {
+            width: 172px;
+            height: 302px;
+            top: -900px;
+            left: -860px;
+        }
+
+        .closebutton {
+            float: left;
+            position: relative;
+            width: 53px;
+            height: 53px;
+            top: -1655px;
+            left: 145px;
+        }
+
+        .bird {
+            float: left;
+            position: relative;
+            width: 56px;
+            height: 51px;
+            top: -1510px;
+            left: 280px;
+        }
+
+        .cloud1 {
+            width: 78px;
+            height: 43px;
+            float: left;
+            position: relative;
+            top: -1580px;
+            left: 150px;
+        }
+
+        .cloud2 {
+            width: 80px;
+            height: 40px;
+            float: left;
+            position: relative;
+            top: -1580px;
+            left: -100px;
+        }
+
+        .tree {
+            width: 126px;
+            height: 164px;
+            float: left;
+            position: relative;
+            top: -1451px;
+            left: -473px;
+        }
+
+        .leave {
+            width: 107px;
+            height: 120px;
+            float: left;
+            position: relative;
+            top: -1530px;
+            left: -565px;
+        }
+
+        .mountain {
+            width: 353px;
+            height: 201px;
+            float: left;
+            position: relative;
+            top: -1463px;
+            left: -214px;
+        }
+
+        #showtime {
+            float: left;
+            position: relative;
+            /* border: 1px solid greenyellow; */
+            width: 110px;
+            height: 50px;
+            font-size: 40px;
+            color: red;
+            font-family: "Comic Sans MS";
+            top: -1050px;
+            left: -540px;
+        }
+
+        .timerbackground {
+            /* border: 1px solid green; */
+            float: left;
+            position: relative;
+            width: 170px;
+            height: 90px;
+            top: -980px;
+            left: -625px;
+        }
+
+        #timerbackgroundimg {
+            width: 170px;
+            height: 90px;
+        }
+
+        .clock {
+            width: 134px;
+            height: 59px;
+            top: -1530px;
+            left: -450px;
+        }
+
+        .counterbackground {
+            width: 170px;
+            height: 100px;
+            top: -1135px;
+            left: -375px;
+        }
+
+        #counterbackground-img {
+            width: 170px;
+            height: 100px;
+        }
+
+        #countitem {
+            float: left;
+            position: relative;
+            width: 120px;
+            height: 50px;
+            font-size: 45px;
+            color: red;
+            font-family: "Comic Sans MS";
+            top: -1210px;
+            left: 460px;
+        }
+
+        .navigation-wrapper {
+            position: relative;
+        }
+
+        .navigation-button {
+            will-change: transform;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: fixed;
+            z-index: 1;
+            top: 15px;
+            right: 150px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+            .navigation-button .fa {
+                width: 50px;
+                height: 50px;
+            }
+
+        .navigationbutton-img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        .navigation-menu ul li {
+            list-style: none;
+            font-family: impact;
+            font-weight: 300;
+            color: hsl(0, 0%, 70%);
+        }
+
+        .navigation-menu {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            background: #fff;
+            height: 100%;
+            transform: skewX(0deg) translate(100%, 0);
+            transform-origin: top right;
+            transition: all .2s ease-in;
+            z-index: 1000;
+        }
+
+            .navigation-menu ul {
+                transform: skewX(-8deg);
+                transform-origin: top left;
+                position: fixed;
+                right: 120px;
+                top: 120px;
+                width: 400px;
+                text-align: right;
+            }
+
+                .navigation-menu ul li {
+                    position: relative;
+                    z-index: 999;
+                    font-size: 32px;
+                    color: hsl(0, 0%, 10%);
+                    line-height: 64px;
+                }
+
+                    .navigation-menu ul li a {
+                        border: none;
+                        color: hsl(0, 0%, 10%);
+                        text-decoration: none;
+                    }
+
+            .navigation-menu.active {
+                transform: skewX(8deg) translate(0, 0);
+            }
+
+            .navigation-menu li {
+                opacity: 0;
+                transform: translate(0, 10px);
+                transition: all .0s ease-in .3s;
+            }
+
+            .navigation-menu.active li {
+                opacity: 1;
+                transform: translate(0, 0);
+                transition: all .2s ease-in 0s;
+            }
+
+                .navigation-menu.active li:nth-child(1) {
+                    transition-delay: .3s;
+                }
+
+                .navigation-menu.active li:nth-child(2) {
+                    transition-delay: .4s;
+                }
+
+                .navigation-menu.active li:nth-child(3) {
+                    transition-delay: .5s;
+                }
+
+                .navigation-menu.active li:nth-child(4) {
+                    transition-delay: .6s;
+                }
+
+                .navigation-menu.active li:nth-child(5) {
+                    transition-delay: .7s;
+                }
+
+                .navigation-menu.active li:nth-child(6) {
+                    transition-delay: .8s;
+                }
+
+        /* .audiomp3 {
+            float: left;
+            position: relative;
+        } */
+    </style>
+</head>
+
+<body onload="setTimeout(changetoresult, 59000)">
+    <div class="bedroom-senorio">
+
+        <!-- The background img -->
+        <img src="https://i.imgur.com/iRRsCsc.png" alt="Can not find the image source." class="background-img">
+
+        <!-- <div class="audiomp3">
+            <audio src="bensound-buddy.mp3" id="aud" autoplay></audio>
+            <img src="https://i.imgur.com/lPF1RQr.png" id="playpause" />
+        </div> -->
+        <!-- The background music -->
+        <!-- The bed img -->
+        <div class="items bed">
+            <img src="https://i.imgur.com/Woc3rgE.png" alt="Can not find the image source." class="bed-img">
+        </div>
+
+        <!-- The window img -->
+        <div class="items window">
+            <img src="https://i.imgur.com/OBF2LX2.png" alt="Can not find the image source." class="window-img">
+        </div>
+
+        <!-- The desk img -->
+        <div class="items desk">
+            <img src="https://i.imgur.com/gRaRsYz.png" alt="Can not find the image source." class="desk-img">
+        </div>
+
+        <!-- The light img -->
+        <div class="items light">
+            <img id="lamp" onClick="changelamp();changepage();countitems()" src="https://i.imgur.com/18BQBfF.png"
+                 alt="Can not find the image source.">
+        </div>
+
+        <!-- The tablelight img -->
+        <div class="items tablelight">
+            <img id="table-light" onClick="changetablelight();countitems();changepage()"
+                 src="https://i.imgur.com/VXHnWl2.png" alt="Can not find the image source.">
+        </div>
+
+        <!-- The laptop img -->
+        <div class="items laptop">
+            <img id="laptop" onClick="changelaptop();countitems();changepage()" src="https://i.imgur.com/A4QMzFx.png"
+                 alt="Can not find the image source.">
+        </div>
+
+        <!-- The phone img -->
+        <div class="items phone">
+            <img id="phone" onClick="changephone();countitems();changepage()" src="https://i.imgur.com/rGAbpUg.png"
+                 alt="Can not find the image source.">
+        </div>
+
+        <!-- The air conditionor img -->
+        <div class="items ac">
+            <img id="ac" onClick="changeac();countitems();changepage()" src="https://i.imgur.com/OtFuVCY.png"
+                 alt="Can not find the image source.">
+        </div>
+
+        <!-- The heater img -->
+        <div class="items heater">
+            <img id="heater" onClick="changeheater();countitems();changepage()" src="https://i.imgur.com/uVByDb5.png"
+                 alt="Can not find the image source.">
+        </div>
+
+        <!-- The bird in the window img -->
+        <div class="items bird">
+            <img src="https://i.imgur.com/xs6sV2A.png" alt="Can not find the image source." id="birdimg">
+        </div>
+
+        <!-- The cloud 1 in the window img -->
+        <div class="items cloud1">
+            <img src="https://i.imgur.com/Xvk8LGS.png" alt="Can not find the image source." id="cloudimg1">
+        </div>
+
+        <!-- The cloud 2 in the window img -->
+        <div class="items cloud2">
+            <img src="https://i.imgur.com/q8DnWQj.png" alt="Can not find the image source." id="cloudimg2">
+        </div>
+
+        <!-- The mountain in the window img -->
+        <div class="items mountain">
+            <img src="https://i.imgur.com/PEuWZfM.png" alt="Can not find the image source." id="mountainimg">
+        </div>
+
+        <!-- The leave in the window img -->
+        <div class="items leave">
+            <img src="https://i.imgur.com/AZD3H0m.png" alt="Can not find the image source." id="leaveimg">
+        </div>
+
+        <!-- The tree in the window img -->
+        <div class="items tree">
+            <img src="https://i.imgur.com/jVJcFV2.png" alt="Can not find the image source." id="treeimg">
+        </div>
+
+        <!-- The close button img -->
+        <div class="items closebutton">
+            <a href="~/Home/ChooseRooms">
+                <img src="https://i.imgur.com/vgKLrXv.png" alt="Can not find the image source." class="closebutton-img">
+            </a>
+        </div>
+
+        <!-- The timer background img -->
+        <div class="items timerbackground">
+            <img src="https://i.imgur.com/IUOlsqi.png" alt="Can not find the image source." id="timerbackgroundimg">
+        </div>
+
+        <!-- The timer -->
+        <div id="showtime">
+
+        </div>
+
+        <!-- The clock img -->
+        <div class="items clock">
+            <img src="https://i.imgur.com/R2Q9KzN.png" alt="Can not find the image source." class="clock-img">
+        </div>
+
+        <div class="items counterbackground">
+            <img src="https://i.imgur.com/Xl3bO1C.png" alt="Can not find the image source."
+                 id="counterbackground-img" />
+        </div>
+
+        <!-- The count of how many items have been found -->
+        <div id="countitem">
+
+        </div>
+
+        @*<audio autoplay hidden loop preload="auto">
+                <source src="~/Content/bensound-theelevatorbossanova.mp3" type="audio/mpeg" />
+            </audio>*@
+
+        <div class="items navigation-wrapper">
+            <div class="items navigation-button">
+                <i class="fa fa-bars">
+                    <img class="navigationbutton-img" src="https://i.imgur.com/G1qIGAw.png"
+                         alt="Can not find the image source." />
+                </i>
+
+            </div>
+            <div class="navigation-menu">
+                <ul>
+                    <li><a href="~/Home/Index">HOME</a></li>
+                    <li><a href="~/Home/Story">STORY</a></li>
+                    <li><a href="~/Home/ChooseRooms">CHOOSE ROOMS</a></li>
+                    <li><a href="~/Home/Rules">GUIDLINE</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var navButton = document.querySelector('.navigation-button');
+        var navMenu = document.querySelector('.navigation-menu');
+        var win = window;
+
+        function openMenu(event) {
+
+            navButton.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        function closeMenu(event) {
+            if (navButton.classList.contains('active')) {
+                navButton.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+        navButton.addEventListener('click', openMenu, false);
+        win.addEventListener('click', closeMenu, false);
+
+        // hide the bird in the window
+        var bird = document.getElementById("birdimg");
+        bird.style.display = "none";
+
+        // hide the cloud 1 in the window
+        var cloud1 = document.getElementById("cloudimg1")
+        cloud1.style.display = "none";
+
+        // hide the cloud 2 in the window
+        var cloud2 = document.getElementById("cloudimg2")
+        cloud2.style.display = "none";
+
+        // hide the tree in the window
+        var tree = document.getElementById("treeimg")
+        tree.style.display = "none";
+
+        // hide the leave in the window
+        var leave = document.getElementById("leaveimg")
+        leave.style.display = "none";
+
+        // hide the mountain in the window
+        var mountain = document.getElementById("mountainimg")
+        mountain.style.display = "none";
+
+        // set the time
+        resetTime("showtime", 60);
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
+        var e = 0;
+        var f = 0;
+
+        function countitems() {
+            var countitems = a + b + c + d + e + f;
+            console.log(countitems);
+            document.getElementById("countitem").innerHTML = "(" + countitems + "/" + "6)";
+        }
+
+        //show bird after click the light and show light off
+        function changelamp() {
+            var element = document.getElementById("lamp");
+            if (element.src.match("18BQBfF.png")) {
+                element.src = "https://i.imgur.com/42BcMTj.png";
+                bird.style.display = "block";
+                a = 1;
+                console.log(a);
+            }
+            else {
+                element.src = "https://i.imgur.com/18BQBfF.png";
+                bird.style.display = "none";
+                a = 0;
+                console.log(a);
+            }
+        }
+
+        //show cloud1 after click the table light and show table light off
+        function changetablelight() {
+            var element = document.getElementById("table-light");
+            if (element.src.match("https://i.imgur.com/VXHnWl2.png")) {
+                element.src = "https://i.imgur.com/j7En25g.png";
+                cloud1.style.display = "block";
+                b = 1;
+                console.log(b);
+            }
+            else {
+                element.src = "https://i.imgur.com/VXHnWl2.png";
+                cloud1.style.display = "none";
+                b = 0;
+                console.log(b);
+            }
+        }
+
+        //show cloud2 after click the laptop and show laptop off
+        function changelaptop() {
+            var element = document.getElementById("laptop");
+            if (element.src.match("https://i.imgur.com/A4QMzFx.png")) {
+                element.src = "https://i.imgur.com/xj1loMX.png";
+                cloud2.style.display = "block";
+                c = 1;
+                console.log(c);
+            }
+            else {
+                element.src = "https://i.imgur.com/A4QMzFx.png";
+                cloud2.style.display = "none";
+                c = 0;
+                console.log(c);
+            }
+        }
+
+        //show tree after click the phone and show phone off
+        function changephone() {
+            var element = document.getElementById("phone");
+            if (element.src.match("https://i.imgur.com/rGAbpUg.png")) {
+                element.src = "https://i.imgur.com/mIt9Kr8.png";
+                tree.style.display = "block";
+                d = 1;
+                console.log(d);
+            }
+            else {
+                element.src = "https://i.imgur.com/rGAbpUg.png";
+                tree.style.display = "none";
+                d = 0;
+                console.log(d);
+            }
+        }
+
+        //show leave after click the air conditionor and show air conditionor off
+        function changeac() {
+            var element = document.getElementById("ac");
+            if (element.src.match("https://i.imgur.com/OtFuVCY.png")) {
+                element.src = "https://i.imgur.com/w5YMPs1.png";
+                leave.style.display = "block";
+                e = 1;
+                console.log(e);
+            }
+            else {
+                element.src = "https://i.imgur.com/OtFuVCY.png";
+                leave.style.display = "none";
+                e = 0;
+                console.log(e);
+            }
+        }
+
+        //show mountain after click the heater and show hrater off
+        function changeheater() {
+            var element = document.getElementById("heater");
+            // if (count = 6)
+            // {
+            //     window.location.href = "Result.html";
+            // }
+            // else
+            if (element.src.match("https://i.imgur.com/uVByDb5.png")) {
+                element.src = "https://i.imgur.com/QGzVUnE.png";
+                mountain.style.display = "block";
+                f = 1;
+                console.log(f);
+            }
+            else {
+                element.src = "https://i.imgur.com/uVByDb5.png";
+                mountain.style.display = "none";
+                f = 0;
+                console.log(f);
+            }
+
+        }
+
+        function changepage() {
+            if (a && b && c && d && e && f == 1) {
+                window.location.href = 'ResultGoldBedFemale';
+            }
+        }
+
+        function changetoresult() {
+            var clickeditems = a + b + c + d + e + f;
+            if (clickeditems <= 2) {
+                window.location.href = 'ResultBronzeBedFemale';
+            }
+            else if (clickeditems > 2 && clickeditems <= 5) {
+                window.location.href = 'ResultSilverBedFemale';
+            }
+            else if (clickeditems == 6) {
+                window.location.href = 'ResultGoldBedFemale';
+            }
+        }
+        setTimeout(changetoresult, 59000);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,667 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="60; url=StudyVisual" />
+    <title>Study</title>
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/XabtmCk.png">
+    <script src="~/Scripts/Timer.js"></script>
+    <script src="~/Scripts/Study.js"></script>
+    <link href="~/Content/StudyCSS.css" rel="stylesheet" />
+    <style>
+        body,
+        div,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .study-senario {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        .background-img {
+            width: 1080px;
+            height: 800px;
+        }
+
+        .items {
+            float: left;
+            position: relative;
+        }
+
+        .table {
+            width: 733px;
+            height: 281px;
+            top: -286px;
+        }
+
+        .tablelight-off {
+            width: 115px;
+            height: 228px;
+            top: -420px;
+            left: -630px;
+        }
+
+        .tablelight-on {
+            width: 329px;
+            height: 228px;
+            top: -637px;
+            left: -574px;
+        }
+
+        .desktop-on {
+            width: 232px;
+            height: 241px;
+            top: -840px;
+            left: 240px;
+        }
+
+        .fridge-on {
+            width: 256px;
+            height: 260px;
+            top: -1010px;
+            left: 200px;
+        }
+
+        .fan-on {
+            width: 104px;
+            height: 94px;
+            top: -780px;
+            left: 90px;
+        }
+
+        .fan-off {
+            width: 138px;
+            height: 272px;
+            top: -780px;
+            left: 36px;
+        }
+
+        .shelf {
+            width: 179px;
+            height: 506px;
+            top: -1050px;
+            left: 171px;
+        }
+
+        .toplight-off {
+            width: 107px;
+            height: 105px;
+            top: -1258px;
+            left: -40px;
+        }
+
+        .toplight-on {
+            width: 340px;
+            height: 317px;
+            top: -1676px;
+            left: 710px;
+        }
+
+        .ac-off {
+            width: 194px;
+            height: 68px;
+            top: -1730px;
+            left: 100px;
+        }
+
+        .ac-on {
+            width: 223px;
+            height: 94px;
+            top: -1660px;
+            left: -100px;
+        }
+
+        .window {
+            width: 320px;
+            height: 218px;
+            top: -1730px;
+            left: -720px;
+        }
+
+        .sky {
+            width: 320px;
+            height: 182px;
+            top: -1946px;
+            left: -303px;
+        }
+
+        .grass {
+            width: 320px;
+            height: 115px;
+            top: -1842px;
+            left: -624px;
+        }
+
+        .tree1 {
+            width: 81px;
+            height: 183px;
+            top: -1912px;
+            left: -945px;
+        }
+
+        .tree2 {
+            width: 135px;
+            height: 177px;
+            top: -2097px;
+            left: 220px;
+        }
+
+        .sun {
+            width: 67px;
+            height: 72px;
+            top: -2130px;
+            left: 155px;
+        }
+
+        .cloud {
+            width: 123px;
+            height: 50px;
+            top: -2120px;
+            left: -87px;
+        }
+
+        .timerbackground {
+            /* border: 1px solid green; */
+            float: left;
+            position: relative;
+            width: 170px;
+            height: 90px;
+            top: -1470px;
+            left: 415px;
+        }
+
+        #timerbackgroundimg {
+            width: 170px;
+            height: 90px;
+        }
+
+        #showtime {
+            float: left;
+            position: relative;
+            /* border: 1px solid greenyellow; */
+            top: -1452px;
+            left: 275px;
+            width: 110px;
+            height: 50px;
+            font-size: 40px;
+            color: red;
+            font-family: "Comic Sans MS";
+        }
+
+        .closebutton {
+            float: left;
+            position: relative;
+            top: -2150px;
+            left: 350px;
+            width: 53px;
+            height: 53px;
+        }
+
+        .counterbackground {
+            width: 170px;
+            height: 100px;
+            top: -1477px;
+            left: 251px;
+        }
+
+        #counterbackground-img {
+            width: 170px;
+            height: 100px;
+        }
+
+        #countitem {
+            float: left;
+            position: relative;
+            width: 120px;
+            height: 50px;
+            font-size: 45px;
+            color: red;
+            font-family: "Comic Sans MS";
+            top: -1450px;
+            left: 113px;
+        }
+
+        .navigation-wrapper {
+            position: relative;
+        }
+
+        .navigation-button {
+            will-change: transform;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: fixed;
+            z-index: 1;
+            top: 15px;
+            right: 150px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+            .navigation-button .fa {
+                width: 50px;
+                height: 50px;
+            }
+
+        .navigationbutton-img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        .navigation-menu ul li {
+            list-style: none;
+            font-family: impact;
+            font-weight: 300;
+            color: hsl(0, 0%, 70%);
+        }
+
+        .navigation-menu {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            background: #fff;
+            height: 100%;
+            transform: skewX(0deg) translate(100%, 0);
+            transform-origin: top right;
+            transition: all .2s ease-in;
+            z-index: 1000;
+        }
+
+            .navigation-menu ul {
+                transform: skewX(-8deg);
+                transform-origin: top left;
+                position: fixed;
+                right: 120px;
+                top: 120px;
+                width: 400px;
+                text-align: right;
+            }
+
+                .navigation-menu ul li {
+                    position: relative;
+                    z-index: 999;
+                    font-size: 32px;
+                    color: hsl(0, 0%, 10%);
+                    line-height: 64px;
+                }
+
+                    .navigation-menu ul li a {
+                        border: none;
+                        color: hsl(0, 0%, 10%);
+                        text-decoration: none;
+                    }
+
+            .navigation-menu.active {
+                transform: skewX(8deg) translate(0, 0);
+            }
+
+            .navigation-menu li {
+                opacity: 0;
+                transform: translate(0, 10px);
+                transition: all .0s ease-in .3s;
+            }
+
+            .navigation-menu.active li {
+                opacity: 1;
+                transform: translate(0, 0);
+                transition: all .2s ease-in 0s;
+            }
+
+                .navigation-menu.active li:nth-child(1) {
+                    transition-delay: .3s;
+                }
+
+                .navigation-menu.active li:nth-child(2) {
+                    transition-delay: .4s;
+                }
+
+                .navigation-menu.active li:nth-child(3) {
+                    transition-delay: .5s;
+                }
+
+                .navigation-menu.active li:nth-child(4) {
+                    transition-delay: .6s;
+                }
+
+                .navigation-menu.active li:nth-child(5) {
+                    transition-delay: .7s;
+                }
+
+                .navigation-menu.active li:nth-child(6) {
+                    transition-delay: .8s;
+                }
+    </style>
+</head>
+
+<body onload="setTimeout(changetoresult, 59000)">
+    <div class="study-senario">
+        <img src="https://i.imgur.com/xlIGfbm.png" alt="Can not find the image source." class="background-img">
+
+        <div class="items table">
+            <img src="https://i.imgur.com/9GEdkW5.png" alt="Can not find the image source." id="table-img">
+        </div>
+
+        <div class="items tablelight-off">
+            <img onclick="changetablelight();countitems();changepage()" src="https://i.imgur.com/0fcRPP7.png"
+                 alt="Can not find the image source." id="tablelight-off-img">
+        </div>
+
+        <div class="items tablelight-on">
+            <img src="https://i.imgur.com/lNfXi4Y.png" alt="Can not find the image source." id="tablelight-on-img">
+        </div>
+
+        <div class="items desktop-on">
+            <img onclick="changedesktop();countitems();changepage()" src="https://i.imgur.com/ez7ASkc.png"
+                 alt="Can not find the image source." id="desktop-on-img">
+        </div>
+
+        <div class="items fridge-on">
+            <img onclick="changefridge();countitems();changepage()" src="https://i.imgur.com/BPOxr1C.png"
+                 alt="Can not find the image source." id="fridge-on-img">
+        </div>
+
+        <div class="items fan-on">
+            <img src="https://i.imgur.com/xUL6PBH.png" alt="Can not find the image source." id="fan-on-img">
+        </div>
+
+        <div class="items fan-off">
+            <img onclick="changefan();countitems();changepage()" src="https://i.imgur.com/MBVsLZN.png"
+                 alt="Can not find the image source." id="fan-off-img">
+        </div>
+
+        <div class="items shelf">
+            <img src="https://i.imgur.com/cZH4IEU.png" alt="Can not find the image source." id="shelf-img">
+        </div>
+
+        <div class="items toplight-off">
+            <img onclick="changetoplight();countitems();changepage()" src="https://i.imgur.com/TBUgJ2r.png"
+                 alt="Can not find the image source." id="toplight-off-img">
+        </div>
+
+        <div class="items toplight-on">
+            <img src="https://i.imgur.com/RWFvqm7.png" alt="Can not find the image source." id="toplight-on-img">
+        </div>
+
+        <div class="items ac-off">
+            <img onclick="changeac(); countitems(); changepage()" src="https://i.imgur.com/pg2sEpD.png"
+                 alt="Can not find the image source." id="ac-off-img">
+        </div>
+
+        <div class="items ac-on">
+            <img src="https://i.imgur.com/db5YN65.png" alt="Can not find the image source." id="ac-on-img">
+        </div>
+
+        <div class="items window">
+            <img src="https://i.imgur.com/TP2kXVZ.png" alt="Can not find the image source." id="window-img">
+        </div>
+
+        <div class="items sky">
+            <img src="https://i.imgur.com/a0yxMTP.png" alt="Can not find the image source." id="sky-img">
+        </div>
+
+        <div class="items grass">
+            <img src="https://i.imgur.com/7TervHW.png" alt="Can not find the image source." id="grass-img">
+        </div>
+
+        <div class="items tree1">
+            <img src="https://i.imgur.com/AfElQHt.png" alt="Can not find the image source." id="tree1-img">
+        </div>
+
+        <div class="items tree2">
+            <img src="https://i.imgur.com/eGTxh6q.png" alt="Can not find the image source." id="tree2-img">
+        </div>
+
+        <div class="items sun">
+            <img src="https://i.imgur.com/TXZJMWf.png" alt="Can not find the image source." id="sun-img">
+        </div>
+
+        <div class="items cloud">
+            <img src="https://i.imgur.com/pnDfXLo.png" alt="Can not find the image source." id="cloud-img">
+        </div>
+
+        <!-- The timer background img -->
+        <div class="timerbackground">
+            <img src="https://i.imgur.com/IUOlsqi.png" alt="Can not find the image source." id="timerbackgroundimg">
+        </div>
+
+        <!-- The timer -->
+        <div id="showtime">
+
+        </div>
+
+        <!-- The close button img -->
+        <div class="items closebutton">
+            <a href="~/Home/ChooseRooms">
+                <img src="https://i.imgur.com/vgKLrXv.png" alt="Can not find the image source." class="closebutton-img">
+            </a>
+        </div>
+
+        <div class="items counterbackground">
+            <img src="https://i.imgur.com/Xl3bO1C.png" alt="Can not find the image source."
+                 id="counterbackground-img" />
+        </div>
+
+        <!-- The count of how many items have been found -->
+        <div id="countitem">
+
+        </div>
+
+        <div class="items navigation-wrapper">
+            <div class="items navigation-button">
+                <i class="fa fa-bars">
+                    <img class="navigationbutton-img" src="https://i.imgur.com/G1qIGAw.png"
+                         alt="Can not find the image source." />
+                </i>
+
+            </div>
+            <div class="navigation-menu">
+                <ul>
+                    <li><a href="~/Home/Index">HOME</a></li>
+                    <li><a href="~/Home/Story">STORY</a></li>
+                    <li><a href="~/Home/ChooseRooms">CHOOSE ROOMS</a></li>
+                    <li><a href="~/Home/Rules">GUIDLINE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var navButton = document.querySelector('.navigation-button');
+        var navMenu = document.querySelector('.navigation-menu');
+        var win = window;
+
+        function openMenu(event) {
+
+            navButton.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        function closeMenu(event) {
+            if (navButton.classList.contains('active')) {
+                navButton.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+        navButton.addEventListener('click', openMenu, false);
+        win.addEventListener('click', closeMenu, false);
+
+        var sun = document.getElementById("sun-img");
+        sun.style.display = "none";
+
+        var sky = document.getElementById("sky-img");
+        sky.style.display = "none";
+
+        var grass = document.getElementById("grass-img");
+        grass.style.display = "none";
+
+        var tree1 = document.getElementById("tree1-img");
+        tree1.style.display = "none";
+
+        var tree2 = document.getElementById("tree2-img");
+        tree2.style.display = "none";
+
+        var cloud = document.getElementById("cloud-img");
+        cloud.style.display = "none";
+
+        var ac = document.getElementById("ac-on-img");
+
+        var fan = document.getElementById("fan-on-img");
+
+        var tablelight = document.getElementById("tablelight-on-img");
+
+        var toplight = document.getElementById("toplight-on-img");
+
+        // set the time
+        resetTime("showtime", 60);
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
+        var e = 0;
+        var f = 0;
+
+        function countitems() {
+            var countitems = a + b + c + d + e + f;
+            console.log("count:" + countitems);
+            document.getElementById("countitem").innerHTML = "(" + countitems + "/" + "6)";
+        }
+
+        function changetablelight() {
+            var element = document.getElementById("tablelight-off-img");
+            if (element.src.match("https://i.imgur.com/0fcRPP7.png")) {
+                element.src = "https://i.imgur.com/T1EsPQW.png";
+                sun.style.display = "block";
+                tablelight.style.display = "none";
+                a = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/0fcRPP7.png";
+                sun.style.display = "none";
+                tablelight.style.display = "block";
+                a = 0;
+            }
+        }
+
+        function changeac() {
+            var element = document.getElementById("ac-off-img");
+            if (element.src.match("https://i.imgur.com/pg2sEpD.png")) {
+                element.src = "https://i.imgur.com/jqwLufm.png";
+                grass.style.display = "block";
+                ac.style.display = "none";
+                b = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/pg2sEpD.png";
+                grass.style.display = "none";
+                ac.style.display = "block";
+                b = 0;
+            }
+        }
+
+        function changefan() {
+            var element = document.getElementById("fan-off-img");
+            if (element.src.match("https://i.imgur.com/MBVsLZN.png")) {
+                element.src = "https://i.imgur.com/ZiYd0eV.png";
+                sky.style.display = "block";
+                fan.style.display = "none";
+                c = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/MBVsLZN.png";
+                sky.style.display = "none";
+                fan.style.display = "block";
+                c = 0;
+            }
+        }
+
+        function changetoplight() {
+            var element = document.getElementById("toplight-off-img");
+            if (element.src.match("https://i.imgur.com/TBUgJ2r.png")) {
+                element.src = "https://i.imgur.com/Oayfwb7.png";
+                tree1.style.display = "block";
+                toplight.style.display = "none";
+                d = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/TBUgJ2r.png";
+                tree1.style.display = "none";
+                toplight.style.display = "block";
+                d = 0;
+            }
+        }
+
+        function changedesktop() {
+            var element = document.getElementById("desktop-on-img");
+            if (element.src.match("https://i.imgur.com/ez7ASkc.png")) {
+                element.src = "https://i.imgur.com/IsP9pvg.png";
+                tree2.style.display = "block";
+                e = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/ez7ASkc.png";
+                tree2.style.display = "none";
+                e = 0;
+            }
+        }
+
+        function changefridge() {
+            var element = document.getElementById("fridge-on-img");
+            if (element.src.match("https://i.imgur.com/BPOxr1C.png")) {
+                element.src = "https://i.imgur.com/jYSeYwD.png";
+                cloud.style.display = "block";
+                f = 1;
+            }
+            else {
+                element.src = "https://i.imgur.com/BPOxr1C.png";
+                cloud.style.display = "none";
+                f = 0;
+            }
+        }
+
+        function changepage() {
+            if (a && b && c && d && e && f == 1) {
+                window.location.href = 'ResultGoldStudyFemale';
+            }
+        }
+
+        function changetoresult() {
+            var clickeditems = a + b + c + d + e + f;
+            if (clickeditems <= 2) {
+                window.location.href = 'ResultBronzeStudyFemale';
+            }
+            else if (clickeditems > 2 && clickeditems <= 5) {
+                window.location.href = 'ResultSilverStudyFemale';
+            }
+            else if (clickeditems == 6) {
+                window.location.href = 'ResultGoldStudyFemale';
+            }
+        }
+        setTimeout(changetoresult, 59000);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/XabtmCk.png">
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
+    <title>Bedroom-visualisation</title>
+    <style>
+        body,
+        div,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .bedroom-visualisation {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        .background-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .items {
+            float: left;
+            position: relative;
+        }
+
+        .words {
+            font-size: 40px;
+            font-family: 'Schoolbell', cursive;
+            top: -700px;
+            left: 80px;
+        }
+
+        .toplight {
+            width: 261px;
+            top: -640px;
+            left: -665px;
+        }
+
+        .toplight-img {
+            width: 261px;
+        }
+
+        .tablelight {
+            width: 286px;
+            top: -635px;
+            left: 35px;
+        }
+
+        .tablelight-img {
+            width: 286px;
+        }
+
+        .notebook {
+            width: 261px;
+            top: -560px;
+            left: -225px;
+        }
+
+        .notebook-img {
+            width: 261px;
+        }
+
+        .heater {
+            width: 897px;
+            top: -575px;
+            left: 60px;
+        }
+
+        .heater-img {
+            width: 897px;
+        }
+
+        .dehumidifier {
+            width: 832px;
+            top: -600px;
+            left: 45px;
+        }
+
+        .dehumidifier-img {
+            width: 832px;
+        }
+
+        .ac {
+            width: 889px;
+            height: 84px;
+            top: -620px;
+            left: 20px;
+        }
+
+        .ac-img {
+            width: 889px;
+        }
+
+        .getitbutton {
+            width: 128px;
+            height: 55px;
+            top: -480px;
+            left: -0px;
+        }
+
+        #toplight_tree_num {
+            top: -1080px;
+            left: -510px;
+            font-size: 30px;
+            font-family: 'Schoolbell', cursive;
+        }
+
+        #tablelight_tree_num {
+            top: -1005px;
+            left: -580px;
+            font-size: 30px;
+            font-family: 'Schoolbell', cursive;
+        }
+
+        #laptop_tree_num {
+            top: -970px;
+            left: 380px;
+            font-size: 30px;
+            font-family: 'Schoolbell', cursive;
+        }
+
+        #heater_tree_num {
+            top: -880px;
+            left: 900px;
+            font-size: 30px;
+            font-family: 'Schoolbell', cursive;
+        }
+
+
+        #dehum_tree_num {
+            top: -760px;
+            left: 460px;
+            font-size: 30px;
+            font-family: 'Schoolbell', cursive;
+        }
+
+        #ac_tree_num {
+            top: -560px;
+            left: 370px;
+            font-size: 30px;
+            font-family: 'Schoolbell', cursive;
+        }
+
+        .navigation-wrapper {
+            position: relative;
+        }
+
+        .navigation-button {
+            will-change: transform;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: fixed;
+            z-index: 1;
+            top: 15px;
+            right: 150px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+            .navigation-button .fa {
+                width: 50px;
+                height: 50px;
+            }
+
+        .navigationbutton-img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        .navigation-menu ul li {
+            list-style: none;
+            font-family: impact;
+            font-weight: 300;
+            color: hsl(0, 0%, 70%);
+        }
+
+        .navigation-menu {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            background: #fff;
+            height: 100%;
+            transform: skewX(0deg) translate(100%, 0);
+            transform-origin: top right;
+            transition: all .2s ease-in;
+            z-index: 1000;
+        }
+
+            .navigation-menu ul {
+                transform: skewX(-8deg);
+                transform-origin: top left;
+                position: fixed;
+                right: 120px;
+                top: 120px;
+                width: 400px;
+                text-align: right;
+            }
+
+                .navigation-menu ul li {
+                    position: relative;
+                    z-index: 999;
+                    font-size: 32px;
+                    color: hsl(0, 0%, 10%);
+                    line-height: 64px;
+                }
+
+                    .navigation-menu ul li a {
+                        border: none;
+                        color: hsl(0, 0%, 10%);
+                        text-decoration: none;
+                    }
+
+            .navigation-menu.active {
+                transform: skewX(8deg) translate(0, 0);
+            }
+
+            .navigation-menu li {
+                opacity: 0;
+                transform: translate(0, 10px);
+                transition: all .0s ease-in .3s;
+            }
+
+            .navigation-menu.active li {
+                opacity: 1;
+                transform: translate(0, 0);
+                transition: all .2s ease-in 0s;
+            }
+
+                .navigation-menu.active li:nth-child(1) {
+                    transition-delay: .3s;
+                }
+
+                .navigation-menu.active li:nth-child(2) {
+                    transition-delay: .4s;
+                }
+
+                .navigation-menu.active li:nth-child(3) {
+                    transition-delay: .5s;
+                }
+
+                .navigation-menu.active li:nth-child(4) {
+                    transition-delay: .6s;
+                }
+
+                .navigation-menu.active li:nth-child(5) {
+                    transition-delay: .7s;
+                }
+
+                .navigation-menu.active li:nth-child(6) {
+                    transition-delay: .8s;
+                }
+    </style>
+</head>
+
+<body>
+    <div class="bedroom-visualisation">
+        <img src="https://i.imgur.com/OMirZLN.png" alt="Can not find the image source." class="background-img">
+
+        <div class="items words">
+            <b>How many trees saved in 1 year if you turn off the items:</b>
+        </div>
+
+        <div class="items toplight">
+            <img src="https://i.imgur.com/J5NWasT.png" alt="Can not find the image source." class="toplight-img">
+        </div>
+
+        <div class="items tablelight">
+            <img src="https://i.imgur.com/GulYipY.png" alt="Can not find the image source." class="tablelight-img">
+        </div>
+
+        <div class="items notebook">
+            <img src="https://i.imgur.com/wN0gLee.png" alt="Can not find the image source." class="notebook-img">
+        </div>
+
+        <div class="items heater">
+            <img src="https://i.imgur.com/E67uoFX.png" alt="Can not find the image source." class="heater-img">
+        </div>
+
+        <div class="items dehumidifier">
+            <img src="https://i.imgur.com/Deon1N3.png" alt="Can not find the image source." class="dehumidifier-img">
+        </div>
+
+        <div class="items ac">
+            <img src="https://i.imgur.com/j5jUDXo.png" alt="Can not find the image source." class="ac-img">
+        </div>
+
+        <div class="items getitbutton">
+            <a onclick="javascript:window.history.back(-1);" href="#">
+                <img src="https://i.imgur.com/H4K5Dwh.png"
+                     alt="Can not find the image source." class="getbutton-img" />
+            </a>
+        </div>
+
+
+        <div class="items" id="toplight_tree_num">
+        </div>
+
+        <div class="items" id="tablelight_tree_num">
+        </div>
+
+        <div class="items" id="laptop_tree_num">
+        </div>
+
+        <div class="items" id="heater_tree_num">
+        </div>
+
+        <div class="items" id="dehum_tree_num">
+        </div>
+
+        <div class="items" id="ac_tree_num">
+        </div>
+
+        <div class="items navigation-wrapper">
+            <div class="items navigation-button">
+                <i class="fa fa-bars">
+                    <img class="navigationbutton-img" src="https://i.imgur.com/G1qIGAw.png"
+                         alt="Can not find the image source." />
+                </i>
+
+            </div>
+            <div class="navigation-menu">
+                <ul>
+                    <li><a href="~/Home/Index">HOME</a></li>
+                    <li><a href="~/Home/Story">STORY</a></li>
+                    <li><a href="~/Home/ChooseRooms">CHOOSE ROOMS</a></li>
+                    <li><a href="~/Home/Rules">GUIDLINE</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        $.ajax({
+            url: 'getData',
+            type: 'GET',
+            data: {},
+            dataType: 'JSON',
+            success: function (response) {
+                //console.log(response.stauts);
+                //console.log(response.msg);
+                console.info(response);
+                var data = response;
+                var ac = 0;
+                var heater = 0;
+                var toplamp = 0;
+                var tablelamp = 0;
+                var dehum = 0;
+                var laptop = 0;
+
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].applianceType == 'air_conditioner') {
+                        var ac = data[i].visualTreeNumber;
+                    }
+
+                    else if (data[i].applianceType == 'dehumidifiers') {
+                        var dehum = data[i].visualTreeNumber;
+
+                    }
+
+                    else if (data[i].applianceType == 'heater') {
+                        var heater = data[i].visualTreeNumber;
+
+                    }
+                    else if (data[i].applianceType == 'lamp') {
+                        var toplamp = data[i].visualTreeNumber;
+                        var tablelamp = data[i].visualTreeNumber;
+
+                    }
+                    else if (data[i].applianceType == 'laptop') {
+                        var laptop = data[i].visualTreeNumber;
+
+                    }
+
+                    else {
+                        continue;
+                    }
+
+
+                }
+
+
+                document.getElementById("toplight_tree_num").innerHTML = toplamp + " tree";
+                document.getElementById("tablelight_tree_num").innerHTML = tablelamp + " tree";
+                document.getElementById("laptop_tree_num").innerHTML = laptop + " tree";
+                document.getElementById("heater_tree_num").innerHTML = heater + " trees";
+                document.getElementById("dehum_tree_num").innerHTML = dehum + " trees";
+                document.getElementById("ac_tree_num").innerHTML = ac + " trees";
+
+
+
+            }
+        })
+
+        var navButton = document.querySelector('.navigation-button');
+        var navMenu = document.querySelector('.navigation-menu');
+        var win = window;
+
+        function openMenu(event) {
+
+            navButton.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        function closeMenu(event) {
+            if (navButton.classList.contains('active')) {
+                navButton.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+        navButton.addEventListener('click', openMenu, false);
+        win.addEventListener('click', closeMenu, false);
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

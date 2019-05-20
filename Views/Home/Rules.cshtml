@@ -1,0 +1,251 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/XabtmCk.png">
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
+    <title>Rules</title>
+    <style>
+        body,
+        div,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .rule-page {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 1080px;
+            margin: 0 auto;
+        }
+
+        .background-img {
+            width: 1080px;
+            height: 800px;
+        }
+
+        .items {
+            float: left;
+            position: relative;
+        }
+
+        .window {
+            background: aliceblue;
+            width: 900px;
+            height: 600px;
+            top: -700px;
+            left: 90px;
+            border: 2px solid #1670f0;
+            text-align: center;
+            font-size: 35px;
+            font-family: 'Schoolbell', cursive;
+        }
+
+        .start-button {
+            background: red;
+            width: 300px;
+            height: 80px;
+            font-size: 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Schoolbell', cursive;
+            color: white;
+        }
+
+        .navigation-wrapper {
+            position: relative;
+        }
+
+        .navigation-button {
+            will-change: transform;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: fixed;
+            z-index: 1;
+            top: 15px;
+            right: 150px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+            .navigation-button .fa {
+                width: 50px;
+                height: 50px;
+            }
+
+        .navigationbutton-img {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        .navigation-menu ul li {
+            list-style: none;
+            font-family: impact;
+            font-weight: 300;
+            color: hsl(0, 0%, 70%);
+        }
+
+        .navigation-menu {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 50%;
+            background: #fff;
+            height: 100%;
+            transform: skewX(0deg) translate(100%, 0);
+            transform-origin: top right;
+            transition: all .2s ease-in;
+            z-index: 1000;
+        }
+
+            .navigation-menu ul {
+                transform: skewX(-8deg);
+                transform-origin: top left;
+                position: fixed;
+                right: 120px;
+                top: 120px;
+                width: 400px;
+                text-align: right;
+            }
+
+                .navigation-menu ul li {
+                    position: relative;
+                    z-index: 999;
+                    font-size: 32px;
+                    color: hsl(0, 0%, 10%);
+                    line-height: 64px;
+                }
+
+                    .navigation-menu ul li a {
+                        border: none;
+                        color: hsl(0, 0%, 10%);
+                        text-decoration: none;
+                    }
+
+            .navigation-menu.active {
+                transform: skewX(8deg) translate(0, 0);
+            }
+
+            .navigation-menu li {
+                opacity: 0;
+                transform: translate(0, 10px);
+                transition: all .0s ease-in .3s;
+            }
+
+            .navigation-menu.active li {
+                opacity: 1;
+                transform: translate(0, 0);
+                transition: all .2s ease-in 0s;
+            }
+
+                .navigation-menu.active li:nth-child(1) {
+                    transition-delay: .3s;
+                }
+
+                .navigation-menu.active li:nth-child(2) {
+                    transition-delay: .4s;
+                }
+
+                .navigation-menu.active li:nth-child(3) {
+                    transition-delay: .5s;
+                }
+
+                .navigation-menu.active li:nth-child(4) {
+                    transition-delay: .6s;
+                }
+
+                .navigation-menu.active li:nth-child(5) {
+                    transition-delay: .7s;
+                }
+
+                .navigation-menu.active li:nth-child(6) {
+                    transition-delay: .8s;
+                }
+    </style>
+
+</head>
+
+<body>
+    <div class="rule-page">
+        <img src="https://i.imgur.com/uiOfsSS.jpg" alt="Can not find the image source." class="background-img">
+
+        <div class="items window">
+            <br>
+
+            <b> How to play : </b>
+            <br>
+            <br>
+            <b> Each room in the house has 6 items</b>
+            <br>
+            <b> wasting electricity .</b>
+            <br>
+            <br>
+            <b>Can you find them all ?</b>
+            <br>
+            <br>
+            <b>Click on them to turn them off !</b>
+            <br>
+            <br>
+            <a href="~/Home/Character">
+                <button class="start-button">
+                    <b>START GAME !</b>
+                </button>
+            </a>
+        </div>
+        @*<div class="items navigation-wrapper">
+                <div class="items navigation-button">
+                    <i class="fa fa-bars"><img class="navigationbutton-img" src="https://i.imgur.com/G1qIGAw.png"
+                            alt="Can not find the image source." /></i>
+
+                </div>
+                <div class="navigation-menu">
+                    <ul>
+                        <li><a href="~/Home/Index">HOME</a></li>
+                        <li><a href="~/Home/Story">STORY</a></li>
+                        <li><a href="~/Home/ChooseRooms">CHOOSE ROOMS</a></li>
+                        <li><a href="~/Home/Rules">GUIDLINE</a></li>
+                    </ul>
+                </div>
+            </div>*@
+    </div>
+    <script>
+        var navButton = document.querySelector('.navigation-button');
+        var navMenu = document.querySelector('.navigation-menu');
+        var win = window;
+
+        function openMenu(event) {
+
+            navButton.classList.toggle('active');
+            navMenu.classList.toggle('active');
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        function closeMenu(event) {
+            if (navButton.classList.contains('active')) {
+                navButton.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+        navButton.addEventListener('click', openMenu, false);
+        win.addEventListener('click', closeMenu, false);
+    </script>
+</body>
+
+</html>
